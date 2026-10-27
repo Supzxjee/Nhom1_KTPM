@@ -1,7 +1,10 @@
-# Nhóm 1 – Kiểm thử phần mềm
+# Nhóm 1 - Kiểm thử phần mềm
 
 ## Thành viên
-| Lê Đức Anh |
-| Trần Bảo Châu |
-| Lê Việt Hoàng Thảo |
-| Châu Kiến Lâm |
+
+| Họ tên | MSSV | Vai trò dự kiến |
+| --- | --- | --- |
+| Lê Đức Anh | 49.01.104.002 | ... |
+| Trần Bảo Châu | 49.01.104.013 | ... |
+| Lê Việt Hoàng Thảo | 47.01.104.196 | ... |
+| Châu Kiến Lâm | 50.01.104.082 | ... |
