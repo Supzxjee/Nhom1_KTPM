@@ -8,3 +8,7 @@
 | Trần Bảo Châu | 49.01.104.013 | ... |
 | Lê Việt Hoàng Thảo | 47.01.104.196 | ... |
 | Châu Kiến Lâm | 50.01.104.082 | ... |
+
+## Tài liệu
+
+- [Kế hoạch kiểm thử nháp Buổi 3](docs/ke-hoach-kiem-thu-nhap.md)
