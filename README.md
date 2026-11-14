@@ -1,14 +1,7 @@
-# Nhóm 1 - Kiểm thử phần mềm
+# HCMUE Admissions Chatbot – Gemini API v0.5 – Deployment
 
-## Thành viên
+Mã nguồn chatbot của nhóm COMP1307, bổ sung **đăng nhập nhóm** và cấu hình **Railway + persistent SQLite**.
 
-| Họ tên | MSSV | Vai trò dự kiến |
-| --- | --- | --- |
-| Lê Đức Anh | 49.01.104.002 | ... |
-| Trần Bảo Châu | 49.01.104.013 | ... |
-| Lê Việt Hoàng Thảo | 47.01.104.196 | ... |
-| Châu Kiến Lâm | 50.01.104.082 | ... |
+Xem [README_DEPLOY.md](README_DEPLOY.md) để cài đặt và triển khai.
 
-## Tài liệu
-
-- [Kế hoạch kiểm thử nháp Buổi 3](docs/ke-hoach-kiem-thu-nhap.md)
+**Cảnh báo:** Danh mục ngành CSV còn là dự thảo. File PDF tuyển sinh của bạn cần nạp lại sau khi deploy; không được tự nhận là dữ liệu chính thức đã xác minh.

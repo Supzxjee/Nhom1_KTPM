@@ -1,0 +1,19 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HCMUE Chatbot • Bản mẫu kiểm thử</title>
+<style>body{font-family:system-ui,Arial;max-width:850px;margin:35px auto;padding:0 16px;line-height:1.55;background:#fafafb;color:#24272b}main{background:white;padding:25px;border:1px solid #dfe3eb;border-radius:14px}button{background:#2549a0;color:#fff;border:0;border-radius:7px;padding:9px 16px;cursor:pointer}input,textarea{padding:10px;border:1px solid #bfc7d7;border-radius:7px;box-sizing:border-box;width:100%;font:inherit}textarea{min-height:80px}section{margin:22px 0}.note{padding:12px;background:#fff8e0;border-radius:8px}pre{white-space:pre-wrap;word-break:break-word;background:#f4f5f7;padding:12px;border-radius:7px}small{color:#596475}label{font-weight:600}</style></head><body><main>
+<h1>Chatbot tư vấn tuyển sinh HCMUE (SPS 2026)</h1><p class="note"><strong>Demo kỹ thuật, chưa phải dịch vụ tuyển sinh chính thức.</strong> Danh mục ngành đang ở trạng thái dự thảo. Hỏi đáp yêu cầu admin kích hoạt tài liệu; khi cấu hình GEMINI_API_KEY trong .env sẽ gọi LLM thật qua Gemini API.</p>
+<p><small>Trạng thái tích hợp: <strong id="llmstate">Đang kiểm tra...</strong></small></p>
+<section><h2>1. Tra cứu ngành (7 chữ số)</h2><label for="code">Mã ngành</label><input id="code" value="7140209"><p><button onclick="lookup()">Tra cứu</button> <button onclick="catalog()">Xem tất cả mã SPS trong bộ dự thảo</button></p><pre id="majorout">Chưa tra cứu</pre></section>
+<section><h2>2. Hỏi đáp với nguồn đã kích hoạt</h2><p><button onclick="newSession()">Tạo phiên mới</button> <small id="sid">Chưa tạo phiên</small></p><label for="question">Câu hỏi</label><textarea id="question" placeholder="Hỏi về tuyển sinh...">Ngành Sư phạm Toán học có thông tin gì?</textarea><p><button onclick="ask()">Gửi câu hỏi</button> <button onclick="clearHistory()">Xóa lịch sử (giữ phiên)</button></p><pre id="chatout">Chưa gửi câu hỏi</pre></section>
+<p><small>API docs: <a href="/docs">/docs</a>. Admin upload/verify/activate thực hiện qua Swagger hoặc curl, không nhập token vào giao diện công khai.</small></p></main>
+<script>
+let sessionId='';
+fetch('/health').then(r=>r.json()).then(h=>document.getElementById('llmstate').textContent=h.llm_mode.toUpperCase()+(h.llm_configured?' (đã cấu hình)':' (thiếu API key)')).catch(()=>document.getElementById('llmstate').textContent='Chưa kết nối server');
+async function req(url,options){try{const r=await fetch(url,options);const s=await r.text();let body;try{body=JSON.parse(s)}catch{body=s}return {status:r.status,body}}catch(e){return {error:String(e)}}}
+function show(id,data){document.getElementById(id).textContent=JSON.stringify(data,null,2)}
+async function lookup(){show('majorout',await req('/api/majors/'+encodeURIComponent(document.getElementById('code').value)+'?year=2026'))}
+async function catalog(){let r=await req('/api/majors');if(r.body?.items){r.body.items=r.body.items.map(x=>({code:x.official_program_code,name:x.major_name,status:x.dataset_status}))}show('majorout',r)}
+async function newSession(){const r=await req('/api/sessions',{method:'POST'});sessionId=r.body?.session_id||'';document.getElementById('sid').textContent=sessionId||'Lỗi';show('chatout',r)}
+async function ask(){if(!sessionId)await newSession();if(!sessionId)return;show('chatout',await req('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session_id:sessionId,question:document.getElementById('question').value,history_limit:5})}))}
+async function clearHistory(){if(!sessionId)return;show('chatout',await req('/api/sessions/'+sessionId+'/messages',{method:'DELETE'}))}
+</script></body></html>

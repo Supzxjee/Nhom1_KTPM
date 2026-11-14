@@ -1,0 +1,20 @@
+# Secrets & local state
+.env
+.env.*
+!.env.example
+chatbot.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+.venv/
+# Python/test
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+htmlcov/
+# Local sources and personal data: upload official PDF via admin endpoint AFTER deploy
+*.pdf
+.DS_Store
