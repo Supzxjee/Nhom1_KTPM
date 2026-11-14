@@ -20,7 +20,7 @@ from pydantic import BaseModel, ConfigDict
 from .config import get_settings
 from .database import db_connect, initialize
 from .llm import FALLBACK, answer
-from .retrieval import retrieve, text_from_upload
+from .retrieval import expand_query_with_catalog, retrieve, text_from_upload
 from .validators import validate_query
 
 logger = logging.getLogger(__name__)
@@ -74,7 +74,7 @@ def create_app():
         initialize(settings.db_path, settings.majors_csv)
         yield
 
-    app = FastAPI(title='HCMUE Admissions Chatbot – SRS v1.1', version='0.5.0', lifespan=lifespan)
+    app = FastAPI(title='HCMUE Admissions Chatbot – SRS v1.1', version='0.7.0', lifespan=lifespan)
     app.state.settings = settings
 
     @app.middleware('http')
@@ -273,7 +273,13 @@ def create_app():
                 history = [dict(x) for x in reversed(old)]
             else:
                 history = []
-            matches = retrieve(data.question.strip(), row['text_content'])
+            # Load major catalog for query expansion (name → code boosting).
+            catalog_rows = conn.execute(
+                "SELECT major_name, major_code_7 FROM majors WHERE admission_year=2026 AND campus_code='SPS'"
+            ).fetchall()
+            catalog = [(r['major_name'], r['major_code_7']) for r in catalog_rows]
+            expanded_q = expand_query_with_catalog(data.question.strip(), catalog)
+            matches = retrieve(expanded_q, row['text_content'], catalog=catalog)
             citations = [{'source_id': row['source_id'], 'document_version_id': row['version_id'],
                           'section': m['section']} for m in matches]
             try:
