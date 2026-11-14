@@ -1,0 +1,1234 @@
+BỘ GIÁO DỤC VÀ ĐÀO TẠO 
+TRƯỜNG ĐẠI HỌC SƯ PHẠM 
+THÀNH PHỐ HỒ CHÍ MINH 
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM 
+Độc lập - Tự do - Hạnh phúc 
+ 
+SỐ LƯỢNG TUYỂN SINH CÁC NGÀNH ĐÀO TẠO TRÌNH ĐỘ ĐẠI HỌC,  
+NGÀNH GIÁO DỤC MẦM NON TRÌNH ĐỘ CAO ĐẲNG CHÍNH NĂM 2026 
+Địa điểm đào tạo: trụ sở chính 
+Mã tuyển sinh: SPS 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+1 7140101 Giáo dục học 7140101 Giáo dục học 80 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển  
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+văn) 
+   C03TO - Ngữ văn, Toán, Lịch sử (Toán) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+(Toán) 
+   X01TO - Toán, Ngữ văn, GDKTPL 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   C03 - Ngữ văn, Toán, Lịch sử 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X01 - Toán, Ngữ văn, GDKTPL 
+2 7140103 Công nghệ giáo dục 7140103 Công nghệ giáo dục 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển  
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   B08TO - Toán, Sinh học, Tiếng Anh 
+(Toán) 
+   D07TO - Toán, Hóa học, Tiếng Anh 
+(Toán) 
+   X26TO - Toán, Tin học, Tiếng Anh 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   B08 - Toán, Sinh học, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D07 - Toán, Hóa học, Tiếng Anh 
+   X26 - Toán, Tin học, Tiếng Anh 
+3 7140114 Quản lý giáo dục 7140114 Quản lý giáo dục 80 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+văn) 
+   C03TO - Ngữ văn, Toán, Lịch sử (Toán) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+(Toán) 
+   X01TO - Toán, Ngữ văn, GDKTPL 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   C03 - Ngữ văn, Toán, Lịch sử 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X01 - Toán, Ngữ văn, GDKTPL 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+4 7140201 
+Giáo dục Mầm non 
+(đào tạo tại trụ sở 
+chính) 
+7140201 Giáo dục Mầm non 440 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả thi ĐGNLCB 
+kết hợp thi tuyển năng khiếu: 
+   M02TO - Toán - NK GDMN 1 - NK 
+GDMN 2 (Toán) 
+   M03V A - Ngữ văn (ĐGNL) - NK 
+GDMN 1 - NK GDMN 2 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT kết hợp thi tuyển năng khiếu: 
+   M02 - Toán, Năng khiếu GDMN 1, 
+Năng khiếu GDMN 2 
+   M03 - Ngữ văn, Năng khiếu GDMN 1, 
+Năng khiếu GDMN 2 
+ 
+5 7140202 
+Giáo dục Tiểu học 
+(đào tạo tại trụ sở 
+chính) 
+7140202 Giáo dục Tiểu học 265 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+(Toán) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+6 7140202SN 
+Giáo dục Tiểu học 
+(dạy bằng song ngữ 
+Việt - Anh) 
+7140202SN 
+Giáo dục Tiểu học 
+(dạy bằng song ngữ 
+Việt - Anh) 
+35 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+(Toán) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+7 7140203 Giáo dục Đặc biệt 7140203 Giáo dục Đặc biệt 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C03 - Ngữ văn, Toán, Lịch sử 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+8 7140204 Giáo dục Công dân 7140204 Giáo dục Công dân 40 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   X01V A - Toán, Ngữ văn, GDKTPL 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   X78V A - Ngữ văn, GDKTPL, Tiếng Anh 
+(Ngữ văn) 
+   C14V A - Ngữ văn, Toán, GDCD (Ngữ 
+văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+   D66V A - Ngữ văn, GDCD, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X01 - Toán, Ngữ văn, GDKTPL 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   X78 - Ngữ văn, GDKTPL, Tiếng Anh 
+   C14 - Ngữ văn, Toán, GDCD 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+   D66 - Ngữ văn, GDCD, Tiếng Anh 
+9 7140205 Giáo dục Chính trị 7140205 Giáo dục Chính trị 20 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   X01V A - Toán, Ngữ văn, GDKTPL 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   X78V A - Ngữ văn, GDKTPL, Tiếng Anh 
+(Ngữ văn) 
+   C14V A - Ngữ văn, Toán, GDCD (Ngữ 
+văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+   D66V A - Ngữ văn, GDCD, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   X01 - Toán, Ngữ văn, GDKTPL 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   X78 - Ngữ văn, GDKTPL, Tiếng Anh 
+   C14 - Ngữ văn, Toán, GDCD 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+   D66 - Ngữ văn, GDCD, Tiếng Anh 
+10 7140206 
+Giáo dục Thể chất 
+(đào tạo tại trụ sở 
+chính) 
+7140206 Giáo dục Thể chất 80 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả thi ĐGNLCB 
+kết hợp thi tuyển năng khiếu (NK): 
+   M08V A - Ngữ Văn (ĐGNL) - NK 
+TDTT1 - NK TDTT2 
+   T01TO - Toán (ĐGNL) - NK TDTT1 - 
+NK TDTT2 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT kết hợp thi tuyển năng khiếu: 
+   M08 - Ngữ Văn - NK TDTT1 - NK 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+TDTT2 
+   T01 - Toán - NK TDTT1 - NK TDTT2 
+11 7140208 
+Giáo dục Quốc 
+phòng - An ninh (đào 
+tạo tại trụ sở chính) 
+7140208 Giáo dục Quốc phòng - An ninh 40 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả thi ĐGNLCB 
+kết hợp thi tuyển năng khiếu: 
+   Q01TO - Toán (ĐGNL) - NK TDTT1 - 
+NK GDQP-AN 
+   Q02V A - Ngữ văn (ĐGNL) - NK 
+TDTT1 - NK GDQP-AN 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT kết hợp thi tuyển năng khiếu: 
+   Q01 - Toán, NK TDTT1, NK GDQP-AN 
+   Q02 - Ngữ văn, NK TDTT1, NK 
+GDQP-AN 
+ 
+12 7140209 
+Sư phạm Toán học 
+(đào tạo tại trụ sở 
+chính) 
+7140209 Sư phạm Toán học 140 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   X06TO - Toán, Vật lí, Tin học (Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   X06 - Toán, Vật lí, Tin học 
+13 7140210 Sư phạm Tin học 7140210 Sư phạm Tin học 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   B08TO - Toán, Sinh học, Tiếng Anh 
+(Toán) 
+   D07TO - Toán, Hóa học, Tiếng Anh 
+(Toán) 
+   X26TO - Toán, Tin học, Tiếng Anh 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A01 - Toán, Vật lí, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   B08 - Toán, Sinh học, Tiếng Anh 
+   D07 - Toán, Hóa học, Tiếng Anh 
+   X26 - Toán, Tin học, Tiếng Anh 
+14 7140211 Sư phạm Vật lý 7140211 Sư phạm Vật lý 32 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00LI - Toán, Vật lí, Hóa học (Vật lí) 
+   A01LI - Toán, Vật lí, Tiếng Anh (Vật lí) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+ 
+15 7140212 Sư phạm Hoá học 7140212 Sư phạm Hoá học 40 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00HO - Toán, Vật lí, Hóa học (Hóa 
+học) 
+   B00HO - Toán, Hóa học, Sinh học (Hóa 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+học) 
+   D07HO - Toán, Hóa học, Tiếng Anh 
+(Hóa học) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   B00 - Toán, Hóa học, Sinh học 
+   D07 - Toán, Hóa học, Tiếng Anh 
+16 7140213 Sư phạm Sinh học 7140213 Sư phạm Sinh học 45 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   B00SI - Toán, Hóa học, Sinh học (Sinh 
+học) 
+   D08SI - Toán, Sinh học, Tiếng Anh 
+(Sinh học) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   B00 - Toán, Hóa học, Sinh học 
+   D08 - Toán, Sinh học, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+17 7140217 
+Sư phạm Ngữ văn 
+(đào tạo tại trụ sở 
+chính) 
+7140217 Sư phạm Ngữ văn 90 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   D14V A - Ngữ văn, Lịch sử, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+ 
+18 7140218 Sư phạm Lịch sử 7140218 Sư phạm Lịch sử 45 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+19 7140219 Sư phạm Địa lý 7140219 Sư phạm Địa lý 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   C04V A - Ngữ văn, Toán, Địa lí (Ngữ 
+văn) 
+   D15V A - Ngữ văn, Địa lí, Tiếng Anh 
+(Ngữ văn) 
+   X74V A - Ngữ văn, Địa lí, GDKTPL 
+(Ngữ văn) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   C20V A - Ngữ văn, Địa lí, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C04 - Ngữ văn, Toán, Địa lí 
+   D15 - Ngữ văn, Địa lí, Tiếng Anh 
+   X74 - Ngữ văn, Địa lí, GDKTPL 
+   C20 - Ngữ văn, Địa lí, GDCD 
+20 7140231 
+Sư phạm Tiếng Anh 
+(đào tạo tại trụ sở 
+chính) 
+7140231 Sư phạm Tiếng Anh 165 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+   X79TA - Ngữ văn, Tiếng Anh, Tin học 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X79 - Ngữ văn, Tiếng Anh, Tin học 
+21 7140232 Sư phạm Tiếng Nga 7140232 Sư phạm Tiếng Nga 20 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+   D14TA - Ngữ văn, Lịch sử, Tiếng Anh 
+(Tiếng Anh) 
+   X78TA - Ngữ văn, Tiếng Anh, GDKTPL 
+(Tiếng Anh) 
+   D66TA - Ngữ văn, Tiếng Anh, GDCD 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D02 - Ngữ văn, Toán, Tiếng Nga 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X78 - Ngữ văn, Tiếng Anh, GDKTPL 
+   D66 - Ngữ văn, Tiếng Anh, GDCD 
+22 7140233 Sư phạm Tiếng Pháp 7140233 Sư phạm Tiếng Pháp 20 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D03 - Ngữ văn, Toán, Tiếng Pháp 
+ 
+23 7140234 Sư phạm Tiếng Trung Quốc 7140234 Sư phạm Tiếng Trung Quốc 20 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D04 - Ngữ văn, Toán, Tiếng Trung 
+24 7140246 Sư phạm công nghệ 7140246 Sư phạm công nghệ 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A01LI - Toán, Vật lí, Tiếng Anh (Vật lí) 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   A02LI - Toán, Vật lí, Sinh học (Vật lí) 
+   A02SI - Toán, Vật lí, Sinh học (Sinh 
+học) 
+   A02TO - Toán, Vật lí, Sinh học (Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   A02 - Toán, Vật lí, Sinh học 
+ 
+25 7140247 
+Sư phạm khoa học tự 
+nhiên (đào tạo tại trụ 
+sở chính) 
+7140247 Sư phạm khoa học tự nhiên 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   A00HO - Toán, Vật lí, Hóa học (Hóa 
+học) 
+   A00LI - Toán, Vật lí, Hóa học (Vật lí) 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   A02LI - Toán, Vật lí, Sinh học (Vật lí) 
+   A02SI - Toán, Vật lí, Sinh học (Sinh 
+học) 
+   A02TO - Toán, Vật lí, Sinh học (Toán) 
+   B00HO - Toán, Hóa học, Sinh học (Hóa 
+học) 
+   B00SI - Toán, Hóa học, Sinh học (Sinh 
+học) 
+   B00TO - Toán, Hóa học, Sinh học 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A02 - Toán, Vật lí, Sinh học 
+   B00 - Toán, Hóa học, Sinh học 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+26 7140249 
+Sư phạm Lịch sử - 
+Địa lý (đào tạo tại 
+trụ sở chính) 
+7140249 Sư phạm Lịch sử - 
+Địa lý 
+100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   X74V A - Ngữ văn, Địa lí, GDKTPL 
+(Ngữ văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+   C20V A - Ngữ văn, Địa lí, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   X74 - Ngữ văn, Địa lí, GDKTPL 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+   C20 - Ngữ văn, Địa lí, GDCD 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+27 7210101 Tiếng Việt và văn hoá Việt Nam 7210101 Tiếng Việt và văn hoá Việt Nam 10 1. Ưu tiên xét tuyển  
+28 7220201 Ngôn ngữ Anh 7220201 Ngôn ngữ Anh 220 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+   X79TA - Ngữ văn, Tiếng Anh, Tin học 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X79 - Ngữ văn, Tiếng Anh, Tin học 
+ 
+29 7220202 Ngôn ngữ Nga 7220202 Ngôn ngữ Nga 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D14TA - Ngữ văn, Lịch sử, Tiếng Anh 
+(Tiếng Anh) 
+   X78TA - Ngữ văn, Tiếng Anh, GDKTPL 
+(Tiếng Anh) 
+   D66TA - Ngữ văn, Tiếng Anh, GDCD 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D02 - Ngữ văn, Toán, Tiếng Nga 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+   X78 - Ngữ văn, Tiếng Anh, GDKTPL 
+   D66 - Ngữ văn, Tiếng Anh, GDCD 
+30 7220203 Ngôn ngữ Pháp 7220203 Ngôn ngữ Pháp 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D03 - Ngữ văn, Toán, Tiếng Pháp 
+31 7220204 Ngôn ngữ Trung Quốc 7220204 Ngôn ngữ Trung Quốc 220 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D04 - Ngữ văn, Toán, Tiếng Trung 
+ 
+32 7220209 Ngôn ngữ Nhật 7220209 Ngôn ngữ Nhật 160 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D06 - Ngữ văn, Toán, Tiếng Nhật 
+33 7220210 
+Ngôn ngữ Hàn Quốc 
+(đào tạo tại trụ sở 
+chính) 
+7220210 Ngôn ngữ Hàn Quốc 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+   D14TA - Ngữ văn, Lịch sử, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   DD2 - Ngữ văn, Toán, Tiếng Hàn 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+ 
+34 7229030 Văn học 7229030 Văn học 130 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   D14V A - Ngữ văn, Lịch sử, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+35 7310201 Chính trị học 7310201 Chính trị học 40 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   X01V A - Toán, Ngữ văn, GDKTPL 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   X78V A - Ngữ văn, GDKTPL, Tiếng Anh 
+(Ngữ văn) 
+   C14V A - Ngữ văn, Toán, GDCD (Ngữ 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+   D66V A - Ngữ văn, GDCD, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   X01 - Toán, Ngữ văn, GDKTPL 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   X78 - Ngữ văn, GDKTPL, Tiếng Anh 
+   C14 - Ngữ văn, Toán, GDCD 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+   D66 - Ngữ văn, GDCD, Tiếng Anh 
+36 7310401 Tâm lý học 7310401 Tâm lý học 124 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+văn) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   C04V A - Ngữ văn, Toán, Địa lí (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+(Toán) 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C03 - Ngữ văn, Toán, Lịch sử 
+   C04 - Ngữ văn, Toán, Địa lí 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+37 7310403 Tâm lý học giáo dục 7310403 Tâm lý học giáo dục 104 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+văn) 
+   C04V A - Ngữ văn, Toán, Địa lí (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   D01TO - Ngữ văn, Toán, Tiếng Anh 
+(Toán) 
+   D01TA - Ngữ văn, Toán, Tiếng Anh 
+(Tiếng anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C03 - Ngữ văn, Toán, Lịch sử 
+   C04 - Ngữ văn, Toán, Địa lí 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+38 7310501 Địa lý học 7310501 Địa lý học 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   C04V A - Ngữ văn, Toán, Địa lí (Ngữ 
+văn) 
+   D15V A - Ngữ văn, Địa lí, Tiếng Anh 
+(Ngữ văn) 
+   X74V A - Ngữ văn, Địa lí, GDKTPL 
+(Ngữ văn) 
+   C20V A - Ngữ văn, Địa lí, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C04 - Ngữ văn, Toán, Địa lí 
+   D15 - Ngữ văn, Địa lí, Tiếng Anh 
+   X74 - Ngữ văn, Địa lí, GDKTPL 
+   C20 - Ngữ văn, Địa lí, GDCD 
+39 7310601 Quốc tế học 7310601 Quốc tế học 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   D09TA - Toán, Lịch sử, Tiếng Anh 
+(Tiếng Anh) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D14TA - Ngữ văn, Lịch sử, Tiếng Anh 
+(Tiếng Anh) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   D09 - Toán, Lịch sử, Tiếng Anh 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+40 7310630 Việt Nam học 7310630 Việt Nam học 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   D14V A - Ngữ văn, Lịch sử, Tiếng Anh 
+(Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+41 7420203 Sinh học ứng dụng 7420203 Sinh học ứng dụng 50 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   B00SI - Toán, Hóa học, Sinh học (Sinh 
+học) 
+   D08SI - Toán, Sinh học, Tiếng Anh 
+(Sinh học) 
+   X14SI - Toán, Sinh học, Tin học (Sinh 
+học) 
+   X16SI - Toán, Sinh học, Công nghệ 
+nông nghiệp (Sinh học) 
+   A02SI - Toán, Vật lí, Sinh học (Sinh 
+học) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   B00 - Toán, Hóa học, Sinh học 
+   D08 - Toán, Sinh học, Tiếng Anh 
+   X14 - Toán, Sinh học, Tin học 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X16 - Toán, Sinh học, Công nghệ nông 
+nghiệp 
+   A02 - Toán, Vật lí, Sinh học 
+42 7440102 Vật lý học 7440102 Vật lý học 110 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00LI - Toán, Vật lí, Hóa học (Vật lí) 
+   A01LI - Toán, Vật lí, Tiếng Anh (Vật lí) 
+   X07LI - Toán, Vật lí, Công nghệ công 
+nghiệp (Vật lí) 
+   X08LI - Toán, Vật lí, Công nghệ nông 
+nghiệp (Vật lí) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   X07 - Toán, Vật lí, Công nghệ công 
+nghiệp 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X08 - Toán, Vật lí, Công nghệ nông 
+nghiệp 
+43 7440112 Hoá học 7440112 Hoá học 110 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00HO - Toán, Vật lí, Hóa học (Hóa 
+học) 
+   B00HO - Toán, Hóa học, Sinh học (Hóa 
+học) 
+   D07HO - Toán, Hóa học, Tiếng Anh 
+(Hóa học) 
+   X10HO - Toán, Hóa học, Tin học (Hóa 
+học) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   B00 - Toán, Hóa học, Sinh học 
+   D07 - Toán, Hóa học, Tiếng Anh 
+   X10 - Toán, Hóa học, Tin học 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+44 7460112 Toán ứng dụng 7460112 Toán ứng dụng 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A00TO - Toán, Vật lí, Hóa học (Toán) 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   X06TO - Toán, Vật lí, Tin học (Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A00 - Toán, Vật lí, Hóa học 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   X06 - Toán, Vật lí, Tin học 
+ 
+45 7480201 Công nghệ thông tin 7480201 Công nghệ thông tin 160 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   A01TO - Toán, Vật lí, Tiếng Anh (Toán) 
+   B08TO - Toán, Sinh học, Tiếng Anh 
+(Toán) 
+   D07TO - Toán, Hóa học, Tiếng Anh 
+(Toán) 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   X26TO - Toán, Tin học, Tiếng Anh 
+(Toán) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   A01 - Toán, Vật lí, Tiếng Anh 
+   B08 - Toán, Sinh học, Tiếng Anh 
+   D07 - Toán, Hóa học, Tiếng Anh 
+   X26 - Toán, Tin học, Tiếng Anh 
+46 7760101 Công tác xã hội 7760101 Công tác xã hội 109 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   D14V A - Ngữ văn, Lịch sử, Tiếng Anh 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+47 7760103 Hỗ trợ giáo dục người khuyết tật 7760103 Hỗ trợ giáo dục người khuyết tật 30 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn, Lịch sử, Địa lí (Ngữ 
+văn) 
+   C03V A - Ngữ văn, Toán, Lịch sử (Ngữ 
+văn) 
+   D01V A - Ngữ văn, Toán, Tiếng Anh 
+(Ngữ văn) 
+   X70V A - Ngữ văn, Lịch sử, GDKTPL 
+(Ngữ văn) 
+   C19V A - Ngữ văn, Lịch sử, GDCD (Ngữ 
+văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   C03 - Ngữ văn, Toán, Lịch sử 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+   X70 - Ngữ văn, Lịch sử, GDKTPL 
+   C19 - Ngữ văn, Lịch sử, GDCD 
+48 7810101 Du lịch (đào tạo tại trụ sở chính) 7810101 Du lịch 100 
+1. Xét tuyển thẳng 
+2. Ưu tiên xét tuyển 
+3. Xét tuyển sử dụng kết quả học tập 
+THPT kết hợp thi ĐGNLCB: 
+   C00V A - Ngữ văn (ĐGNL) - Sử - Địa 
+(Ngữ văn) 
+   D01V A - Ngữ văn (ĐGNL) - Toán - Anh 
+(Ngữ văn) 
+   D14V A - Ngữ văn (ĐGNL) - Lịch sử - 
+Tiếng Anh (Ngữ văn) 
+   D15V A - Ngữ văn (ĐGNL) - Địa lí - 
+Tiếng Anh (Ngữ văn) 
+4. Xét tuyển sử dụng kết quả thi tốt nghiệp 
+THPT: 
+   C00 - Ngữ văn, Lịch sử, Địa lí 
+   D01 - Ngữ văn, Toán, Tiếng Anh 
+ 
+TT Mã xét tuyển Tên chương trình, ngành, nhóm ngành 
+xét tuyển 
+Mã ngành Tên ngành 
+Số 
+lượng 
+tuyển 
+sinh 
+Phương thức tuyển sinh Ghi chú 
+   D14 - Ngữ văn, Lịch sử, Tiếng Anh 
+   D15 - Ngữ văn, Địa lí, Tiếng Anh

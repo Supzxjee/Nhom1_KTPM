@@ -78,13 +78,14 @@ def create_app():
         if os.getenv('AUTO_SEED', '1').strip() == '0':
             logger.debug('auto_seed: disabled via AUTO_SEED=0.')
             return
-        # Locate bundled PDF – checked in at repo root.
-        pdf_candidates = [
+        # Locate bundled source file – checked in at data/ or repo root.
+        candidates = [
+            Path(__file__).resolve().parent.parent / 'data' / 'HCMUE_SPS_2026.txt',
             Path(__file__).resolve().parent.parent / 'HCMUE_SPS_2026.pdf',
         ]
-        pdf_path = next((p for p in pdf_candidates if p.exists()), None)
-        if pdf_path is None:
-            logger.warning('auto_seed: bundled PDF not found – skipping.')
+        source_path = next((p for p in candidates if p.exists()), None)
+        if source_path is None:
+            logger.warning('auto_seed: bundled document not found – skipping.')
             return
 
         with db_connect(db_path) as conn:
@@ -95,15 +96,15 @@ def create_app():
                 logger.info('auto_seed: active document already present (%s) – skipping.', active['version_id'])
                 return
 
-            logger.info('auto_seed: no active document found – seeding from %s', pdf_path.name)
+            logger.info('auto_seed: no active document found – seeding from %s', source_path.name)
             try:
-                content = pdf_path.read_bytes()
-                text = text_from_upload(pdf_path.name, content)
+                content = source_path.read_bytes()
+                text = text_from_upload(source_path.name, content)
             except Exception as exc:
-                logger.error('auto_seed: failed to extract PDF text: %s', exc)
+                logger.error('auto_seed: failed to extract document text: %s', exc)
                 return
 
-            version_id = 'DV-SEED-' + pdf_path.stem[:8].upper()
+            version_id = 'DV-SEED-' + source_path.stem[:8].upper()
             # Upsert: replace any existing draft/replaced seed entry.
             conn.execute(
                 "DELETE FROM document_versions WHERE version_id=?", (version_id,)
@@ -114,7 +115,7 @@ def create_app():
                     verified_at, activated_at)
                    VALUES (?, 'SPS_2026', 'HCMUE-SPS-2026', ?, 'active', ?,
                            CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)""",
-                (version_id, pdf_path.name, text),
+                (version_id, source_path.name, text),
             )
             # Deactivate any other accidental active rows.
             conn.execute(

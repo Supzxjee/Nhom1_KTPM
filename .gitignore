@@ -17,4 +17,5 @@ __pycache__/
 htmlcov/
 # Local sources and personal data: upload official PDF via admin endpoint AFTER deploy
 *.pdf
+!HCMUE_SPS_2026.pdf
 .DS_Store
