@@ -69,9 +69,57 @@ def create_app():
     if bool(team_user) != bool(team_password):
         raise RuntimeError('TEAM_USERNAME và TEAM_PASSWORD phải được cấu hình cùng nhau.')
 
+    def auto_seed_document(db_path: Path, settings):
+        """On every startup: if no active document exists, load the bundled PDF."""
+        # Locate bundled PDF – checked in at repo root.
+        pdf_candidates = [
+            Path(__file__).resolve().parent.parent / 'HCMUE_SPS_2026.pdf',
+        ]
+        pdf_path = next((p for p in pdf_candidates if p.exists()), None)
+        if pdf_path is None:
+            logger.warning('auto_seed: bundled PDF not found – skipping.')
+            return
+
+        with db_connect(db_path) as conn:
+            active = conn.execute(
+                "SELECT version_id FROM document_versions WHERE dataset_id='SPS_2026' AND status='active'"
+            ).fetchone()
+            if active:
+                logger.info('auto_seed: active document already present (%s) – skipping.', active['version_id'])
+                return
+
+            logger.info('auto_seed: no active document found – seeding from %s', pdf_path.name)
+            try:
+                content = pdf_path.read_bytes()
+                text = text_from_upload(pdf_path.name, content)
+            except Exception as exc:
+                logger.error('auto_seed: failed to extract PDF text: %s', exc)
+                return
+
+            version_id = 'DV-SEED-' + pdf_path.stem[:8].upper()
+            # Upsert: replace any existing draft/replaced seed entry.
+            conn.execute(
+                "DELETE FROM document_versions WHERE version_id=?", (version_id,)
+            )
+            conn.execute(
+                """INSERT INTO document_versions
+                   (version_id, dataset_id, source_id, filename, status, text_content,
+                    verified_at, activated_at)
+                   VALUES (?, 'SPS_2026', 'HCMUE-SPS-2026', ?, 'active', ?,
+                           CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)""",
+                (version_id, pdf_path.name, text),
+            )
+            # Deactivate any other accidental active rows.
+            conn.execute(
+                "UPDATE document_versions SET status='replaced' WHERE dataset_id='SPS_2026' AND status='active' AND version_id!=?",
+                (version_id,),
+            )
+            logger.info('auto_seed: document %s seeded and activated.', version_id)
+
     @asynccontextmanager
     async def lifespan(app):
         initialize(settings.db_path, settings.majors_csv)
+        auto_seed_document(settings.db_path, settings)
         yield
 
     app = FastAPI(title='HCMUE Admissions Chatbot – SRS v1.1', version='0.7.0', lifespan=lifespan)
