@@ -1,19 +1,153 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HCMUE Chatbot • Bản mẫu kiểm thử</title>
-<style>body{font-family:system-ui,Arial;max-width:850px;margin:35px auto;padding:0 16px;line-height:1.55;background:#fafafb;color:#24272b}main{background:white;padding:25px;border:1px solid #dfe3eb;border-radius:14px}button{background:#2549a0;color:#fff;border:0;border-radius:7px;padding:9px 16px;cursor:pointer}input,textarea{padding:10px;border:1px solid #bfc7d7;border-radius:7px;box-sizing:border-box;width:100%;font:inherit}textarea{min-height:80px}section{margin:22px 0}.note{padding:12px;background:#fff8e0;border-radius:8px}pre{white-space:pre-wrap;word-break:break-word;background:#f4f5f7;padding:12px;border-radius:7px}small{color:#596475}label{font-weight:600}</style></head><body><main>
-<h1>Chatbot tư vấn tuyển sinh HCMUE (SPS 2026)</h1><p class="note"><strong>Demo kỹ thuật, chưa phải dịch vụ tuyển sinh chính thức.</strong> Danh mục ngành đang ở trạng thái dự thảo. Hỏi đáp yêu cầu admin kích hoạt tài liệu; khi cấu hình GEMINI_API_KEY trong .env sẽ gọi LLM thật qua Gemini API.</p>
-<p><small>Trạng thái tích hợp: <strong id="llmstate">Đang kiểm tra...</strong></small></p>
-<section><h2>1. Tra cứu ngành (7 chữ số)</h2><label for="code">Mã ngành</label><input id="code" value="7140209"><p><button onclick="lookup()">Tra cứu</button> <button onclick="catalog()">Xem tất cả mã SPS trong bộ dự thảo</button></p><pre id="majorout">Chưa tra cứu</pre></section>
-<section><h2>2. Hỏi đáp với nguồn đã kích hoạt</h2><p><button onclick="newSession()">Tạo phiên mới</button> <small id="sid">Chưa tạo phiên</small></p><label for="question">Câu hỏi</label><textarea id="question" placeholder="Hỏi về tuyển sinh...">Ngành Sư phạm Toán học có thông tin gì?</textarea><p><button onclick="ask()">Gửi câu hỏi</button> <button onclick="clearHistory()">Xóa lịch sử (giữ phiên)</button></p><pre id="chatout">Chưa gửi câu hỏi</pre></section>
-<p><small>API docs: <a href="/docs">/docs</a>. Admin upload/verify/activate thực hiện qua Swagger hoặc curl, không nhập token vào giao diện công khai.</small></p></main>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>HCMUE Hub · Trợ lý tuyển sinh</title>
+  <style>
+    :root{--navy:#142641;--navy2:#1c3354;--accent:#2458c6;--accentDark:#1744aa;--surface:#ffffff;--background:#f7f9fd;--ink:#17243a;--muted:#68778c;--line:#e5eaf2;--shadow:0 14px 40px rgba(24,47,82,.09);--radius:18px}
+    *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--background);font-size:14px}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.55}a{color:var(--accent)}.app{display:flex;height:100dvh;min-height:520px;overflow:hidden}
+    .sidebar{display:flex;flex-direction:column;width:278px;flex-shrink:0;padding:24px 15px 14px;background:var(--navy);color:#eaf0fc;z-index:30}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 27px}.brandMark{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,#6284fa,#3260c7);font-size:22px;box-shadow:0 5px 18px #07172d5e}.brandTitle{font-weight:800;letter-spacing:.5px;font-size:17px}.brandSub{font-size:11px;color:#aebfda;margin-top:3px}.sideBtn{display:flex;align-items:center;gap:10px;border-radius:11px;padding:12px 13px;border:1px solid #48607c;background:#ffffff10;color:#f3f7ff;text-align:left;width:100%;font-weight:650;transition:background .15s}.sideBtn:hover{background:#ffffff24}.sideHeading{font-size:11px;color:#93a9c7;letter-spacing:.11em;text-transform:uppercase;font-weight:800;margin:27px 12px 12px}.sessionList{flex:1;overflow-y:auto;scrollbar-width:thin}.sessionItem{padding:12px 12px;color:#d5dff0;background:none;border:0;border-radius:10px;width:100%;display:flex;gap:10px;align-items:center;text-align:left;margin:2px 0}.sessionItem span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sessionItem:hover,.sessionItem.active{background:#ffffff1a;color:white}.sessionItem.active{font-weight:700}.sideFooter{border-top:1px solid #344864;padding-top:13px;color:#9eb3cd;font-size:11px;line-height:1.65;padding-left:11px}.sideFooter a{color:#dbe6ff}.sidebarShade{display:none}
+    .main{display:flex;flex-direction:column;flex:1;min-width:0}.topbar{height:72px;min-height:72px;background:#fff;border-bottom:1px solid var(--line);padding:0 clamp(18px,3.4vw,45px);display:flex;align-items:center;justify-content:space-between;gap:12px}.topTitle{font-size:15px;font-weight:750;letter-spacing:-.2px}.topSub{color:var(--muted);font-size:12px;margin-top:4px}.topActions{display:flex;align-items:center;gap:9px}.status{display:flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #dce8f2;background:#f8fafc;border-radius:50px;color:#54667e;font-size:12px;white-space:nowrap}.dot{width:7px;height:7px;border-radius:50%;background:#f2a423;flex-shrink:0}.dot.on{background:#23a66b}.iconBtn{height:39px;border:1px solid #dfe6f0;background:white;border-radius:11px;padding:0 13px;display:inline-flex;align-items:center;justify-content:center;gap:7px;color:#30435c;font-weight:600}.iconBtn:hover{background:#f2f6fc}.hamburger{display:none}
+    .conversation{display:flex;flex-direction:column;flex:1;min-height:0;position:relative}.timeline{flex:1;overflow-y:auto;scroll-behavior:smooth;padding:24px 20px 20px}.timelineInner{max-width:850px;margin:0 auto}.welcome{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(20px,8vh,110px) 0 24px}.heroIcon{height:66px;width:66px;border-radius:23px;background:linear-gradient(135deg,#2f68d8,#718cf8);box-shadow:0 12px 32px #3d68c133;color:white;display:grid;place-items:center;font-size:30px}.welcome h1{margin:22px 0 9px;font-size:clamp(22px,3.0vw,31px);letter-spacing:-1px;line-height:1.2}.welcome p{max-width:610px;color:var(--muted);line-height:1.75;margin:0 16px}.suggestions{max-width:700px;width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:29px auto 0}.suggestion{background:white;color:#2c4564;border:1px solid var(--line);border-radius:14px;text-align:left;padding:16px 15px;line-height:1.55;min-height:74px;box-shadow:0 3px 10px #263a5507;transition:.18s}.suggestion:hover{border-color:#b3c8f8;transform:translateY(-1px);box-shadow:var(--shadow)}.suggestion small{display:block;color:#8190a6;margin-top:3px;font-size:11px}
+    .message{display:flex;gap:15px;margin:15px 0 26px;align-items:flex-start}.message.user{justify-content:flex-end}.avatar{width:32px;height:32px;flex-shrink:0;display:grid;place-items:center;background:#e6edff;color:#2356ba;border-radius:11px;font-size:16px;font-weight:900}.message.user .avatar{display:none}.messageBody{max-width:min(100%,730px);min-width:0}.message.user .messageBody{max-width:min(86%,620px)}.bubble{line-height:1.72;overflow-wrap:anywhere}.user .bubble{background:#e7efff;color:#18345b;border-radius:17px 17px 4px 17px;padding:13px 17px;white-space:pre-wrap}.assistant .bubble{padding:4px 0;color:#22324a;font-size:14px}.bubble p{margin:0 0 10px}.bubble p:last-child{margin-bottom:0}.bubble ul,.bubble ol{margin:5px 0 11px;padding-left:25px}.bubble li{margin:3px 0}.bubble strong{font-weight:750}.bubble code{background:#edf2fb;color:#1d519f;border-radius:5px;padding:2px 5px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.bubble h3{font-size:15px;margin:13px 0 5px}.meta{color:#9daabc;font-size:11px;margin:6px 0 0}.citationList{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}.sourceChip{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:9px;font-size:11px;border:1px solid #d7e5fa;color:#31588c;background:#f5f9ff}.sourceLabel{font-size:11px;color:#6f819b;margin-top:9px;font-weight:750}.loading{display:flex;align-items:center;gap:5px;padding:9px 0}.loading span{display:block;width:7px;height:7px;border-radius:100%;background:#5a7cc4;animation:bounce 1s infinite ease-in-out}.loading span:nth-child(2){animation-delay:.14s}.loading span:nth-child(3){animation-delay:.28s}@keyframes bounce{0%,65%,100%{transform:translateY(0);opacity:.45}35%{transform:translateY(-5px);opacity:1}}
+    .composerArea{background:linear-gradient(0deg,#f7f9fd 75%,#f7f9fd00);padding:13px 20px 23px;z-index:4}.composerWrap{max-width:850px;margin:auto}.composer{background:white;border:1px solid #dce4ef;box-shadow:0 7px 25px #122e5312;border-radius:19px;padding:13px;display:flex;align-items:flex-end;gap:12px}.composer:focus-within{border-color:#a7bdef;box-shadow:0 8px 32px #3b67bd20}.composer textarea{height:45px;max-height:140px;min-height:39px;width:100%;resize:none;border:0;outline:0;color:var(--ink);padding:9px 4px;line-height:1.5;background:transparent}.composer textarea::placeholder{color:#8b99aa}.sendBtn{width:43px;height:43px;flex-shrink:0;border:0;border-radius:13px;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:20px;transition:background .2s}.sendBtn:hover{background:var(--accentDark)}.composerFoot{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#8995a5;font-size:11px;padding:9px 4px 0}.composerFoot strong{color:#586e89}.counter.warn{color:#c03c47}.notice{display:flex;align-items:center;gap:7px;color:#657a98;font-size:11px;line-height:1.5}
+    .overlay{display:none;position:fixed;inset:0;background:#0c1a31aa;z-index:40}.overlay.show{display:block}.drawer{position:fixed;right:0;top:0;height:100dvh;width:min(440px,100%);background:white;box-shadow:-12px 0 60px #091b2b24;transform:translateX(105%);transition:transform .22s;z-index:50;display:flex;flex-direction:column}.drawer.show{transform:translateX(0)}.drawerHeader{display:flex;align-items:center;justify-content:space-between;padding:21px 25px;border-bottom:1px solid var(--line)}.drawerHeader h2{margin:0;font-size:18px}.drawerContent{padding:20px 25px;overflow:auto;flex:1}.drawerTabs{display:flex;gap:7px;background:#f4f7fc;padding:5px;border-radius:12px;margin-bottom:22px}.drawerTabs button{border:0;background:transparent;border-radius:9px;padding:10px;flex:1;color:#536783;font-weight:700}.drawerTabs button.active{background:#fff;box-shadow:0 2px 9px #17396612;color:#1b4ba8}.fieldLabel{font-size:12px;color:#65768e;display:block;font-weight:750;margin-bottom:7px}.fieldRow{display:flex;gap:9px}.fieldRow input{width:100%;padding:11px;border-radius:10px;border:1px solid #d9e2ef;outline:none}.fieldRow input:focus{border-color:#7e9fda}.primary{border:0;border-radius:10px;padding:11px 13px;background:var(--accent);color:white;font-weight:700}.resultCard{border:1px solid var(--line);border-radius:13px;padding:15px;margin-top:17px;line-height:1.65}.resultCard h3{margin:0 0 7px;font-size:15px}.resultCard .sub{color:#71819b;font-size:12px}.resultCard .foot{margin-top:12px;border-top:1px solid var(--line);padding-top:11px}.hint{color:#8492a4;font-size:12px;line-height:1.65}.favoriteCard{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0}.favoriteCard strong{font-size:13px}.favoriteCard small{display:block;color:#8391a7;margin-top:4px}.smallGhost{background:white;border:1px solid #dbe3ef;border-radius:8px;color:#5c6e88;padding:6px 10px}.errorNotice{color:#aa2e39;background:#fff2f3;border:1px solid #f4d3d7;padding:12px;border-radius:11px;line-height:1.5;margin-top:12px;font-size:13px}.emptyState{color:#8995a5;font-size:13px;line-height:1.7;padding:15px 0}.mobileOnly{display:none}
+    @media(max-width:800px){.sidebar{position:fixed;height:100dvh;left:0;transform:translateX(-110%);transition:transform .2s;width:min(290px,86vw)}.sidebar.open{transform:translateX(0)}.sidebarShade.show{display:block;position:fixed;inset:0;background:#0b1c33a0;z-index:20}.hamburger{display:inline-flex}.topbar{height:66px;min-height:66px;padding:0 17px}.topSub{font-size:11px}.status{display:none}.iconBtn.labelButton{padding:0 11px}.iconBtn .buttonText{display:none}.timeline{padding:18px 15px}.suggestions{gap:9px}.suggestion{padding:13px;font-size:12px}.welcome{padding-top:clamp(25px,7vh,70px)}.composerArea{padding:9px 12px 15px}.composer{border-radius:16px}.message{gap:10px}.avatar{width:27px;height:27px;border-radius:9px}.messageBody{max-width:calc(100% - 40px)}.mobileOnly{display:block}}
+    @media(max-width:470px){.suggestions{grid-template-columns:1fr}.welcome h1{font-size:23px}.suggestion{min-height:56px}.topTitle{font-size:13px}.topSub{display:none}.composerFoot .notice{max-width:245px}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Lịch sử hội thoại">
+    <div class="brand"><div class="brandMark" aria-hidden="true">✦</div><div><div class="brandTitle">HCMUE Hub</div><div class="brandSub">Trợ lý tuyển sinh · 2026</div></div></div>
+    <button class="sideBtn" id="newBtn">＋ &nbsp;Cuộc trò chuyện mới</button>
+    <div class="sideHeading">Hội thoại của bạn</div>
+    <nav class="sessionList" id="sessionList"><div class="emptyState" style="padding:12px;color:#a7bad3">Chưa có cuộc trò chuyện.</div></nav>
+    <div class="sideFooter">Dự án học phần Kiểm thử phần mềm<br>Không phải kênh tư vấn chính thức của HCMUE<br><a href="/docs" target="_blank" rel="noopener">Tài liệu API ↗</a></div>
+  </aside>
+  <div class="sidebarShade" id="sidebarShade"></div>
+  <section class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px"><button class="iconBtn hamburger" id="menuBtn" aria-label="Mở lịch sử">☰</button><div><div class="topTitle">Trợ lý tuyển sinh HCMUE</div><div class="topSub">Tư vấn theo tài liệu tuyển sinh SPS · 2026</div></div></div>
+      <div class="topActions"><div class="status" title="Trạng thái cấu hình máy chủ"><span class="dot" id="statusDot"></span><span id="statusText">Đang kết nối...</span></div><button class="iconBtn labelButton" id="majorBtn" title="Tra cứu ngành"><span aria-hidden="true">⌕</span><span class="buttonText">Tra cứu ngành</span></button><button class="iconBtn labelButton" id="clearBtn" title="Xóa lịch sử hội thoại hiện tại" aria-label="Xóa lịch sử hội thoại"><span aria-hidden="true">⌫</span><span class="buttonText">Xóa chat</span></button><button class="iconBtn labelButton" id="favoritesBtn" title="Ngành quan tâm"><span aria-hidden="true">☆</span><span class="buttonText">Đã lưu</span></button></div>
+    </header>
+    <div class="conversation">
+      <div class="timeline" id="timeline" role="log" aria-label="Nội dung hội thoại"><div class="timelineInner" id="messages">
+        <div class="welcome" id="welcome"><div class="heroIcon" aria-hidden="true">✦</div><h1>Chào bạn, mình có thể giúp gì?</h1><p>Mình là trợ lý AI hỗ trợ tìm hiểu tuyển sinh Trường Đại học Sư phạm TP.HCM dựa trên tài liệu đã nạp. Hãy chọn một gợi ý hoặc đặt câu hỏi của bạn.</p><div class="suggestions" id="suggestions"><button class="suggestion" data-prompt="Ngành Sư phạm Toán học năm 2026 có bao nhiêu chỉ tiêu và các tổ hợp xét tuyển nào?">📘 &nbsp;Ngành Sư phạm Toán học<small>Chỉ tiêu và tổ hợp xét tuyển</small></button><button class="suggestion" data-prompt="HCMUE tuyển sinh ngành Giáo dục Tiểu học năm 2026 như thế nào?">🎓 &nbsp;Giáo dục Tiểu học<small>Thông tin tuyển sinh</small></button><button class="suggestion" data-prompt="Có những phương thức xét tuyển nào được mô tả trong tài liệu tuyển sinh 2026?">📝 &nbsp;Phương thức xét tuyển<small>Thông tin từ tài liệu</small></button><button class="suggestion" data-prompt="Ngành Công nghệ thông tin của HCMUE có thông tin gì trong tài liệu năm 2026?">💻 &nbsp;Công nghệ thông tin<small>Tra cứu chương trình</small></button></div></div>
+      </div></div>
+      <div class="composerArea"><div class="composerWrap"><form class="composer" id="chatForm"><textarea id="question" maxlength="500" rows="1" placeholder="Nhắn tin cho trợ lý HCMUE..." aria-label="Nhập câu hỏi tuyển sinh"></textarea><button class="sendBtn" id="sendBtn" type="submit" aria-label="Gửi tin nhắn" title="Gửi tin nhắn">➤</button></form><div class="composerFoot"><span class="notice">ⓘ &nbsp;AI có thể nhầm lẫn. Hãy kiểm tra nguồn chính thức trước khi quyết định.</span><span id="counter" class="counter">0/500</span></div></div></div>
+    </div>
+  </section>
+</div>
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <div class="drawerHeader"><h2 id="drawerTitle">Tra cứu và lưu ngành</h2><button class="iconBtn" id="closeDrawer" aria-label="Đóng">✕</button></div>
+  <div class="drawerContent"><div class="drawerTabs"><button id="tabLookup" class="active">Tra cứu ngành</button><button id="tabSaved">Đã lưu (0/5)</button></div><div id="lookupPanel"><label class="fieldLabel" for="majorCode">Nhập mã ngành gồm 7 chữ số</label><div class="fieldRow"><input id="majorCode" type="text" inputmode="numeric" maxlength="8" placeholder="Ví dụ: 7140209" value="7140209"><button class="primary" id="lookupBtn">Tra cứu</button></div><button id="catalogBtn" class="smallGhost" style="margin-top:12px">Xem toàn bộ ngành/chương trình SPS 2026</button><p class="hint">Đang giới hạn tra cứu mã 7 chữ số theo đặc tả SRS. Một số chương trình có mã chữ-số vẫn được lưu trong danh mục nguồn nhưng không tra cứu qua mục này.</p><div id="lookupResult"></div></div><div id="savedPanel" hidden><div class="emptyState">Đang tải danh sách...</div></div></div>
+</aside>
 <script>
-let sessionId='';
-fetch('/health').then(r=>r.json()).then(h=>document.getElementById('llmstate').textContent=h.llm_mode.toUpperCase()+(h.llm_configured?' (đã cấu hình)':' (thiếu API key)')).catch(()=>document.getElementById('llmstate').textContent='Chưa kết nối server');
-async function req(url,options){try{const r=await fetch(url,options);const s=await r.text();let body;try{body=JSON.parse(s)}catch{body=s}return {status:r.status,body}}catch(e){return {error:String(e)}}}
-function show(id,data){document.getElementById(id).textContent=JSON.stringify(data,null,2)}
-async function lookup(){show('majorout',await req('/api/majors/'+encodeURIComponent(document.getElementById('code').value)+'?year=2026'))}
-async function catalog(){let r=await req('/api/majors');if(r.body?.items){r.body.items=r.body.items.map(x=>({code:x.official_program_code,name:x.major_name,status:x.dataset_status}))}show('majorout',r)}
-async function newSession(){const r=await req('/api/sessions',{method:'POST'});sessionId=r.body?.session_id||'';document.getElementById('sid').textContent=sessionId||'Lỗi';show('chatout',r)}
-async function ask(){if(!sessionId)await newSession();if(!sessionId)return;show('chatout',await req('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session_id:sessionId,question:document.getElementById('question').value,history_limit:5})}))}
-async function clearHistory(){if(!sessionId)return;show('chatout',await req('/api/sessions/'+sessionId+'/messages',{method:'DELETE'}))}
-</script></body></html>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const LS_SESSIONS='hcmuehub.sessions.v1', LS_CURRENT='hcmuehub.current.v1';
+  let sessions=[], currentId='', busy=false, drawerTab='lookup', viewedMajor=null;
+  const prettyDate = () => new Date().toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+  function readLocal(key,fallback){try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}}
+  function writeLocal(key,value){try{localStorage.setItem(key,JSON.stringify(value))}catch{}}
+  function save(){writeLocal(LS_SESSIONS,sessions.slice(0,35));writeLocal(LS_CURRENT,currentId)}
+  const storedSessions=readLocal(LS_SESSIONS,[]);sessions=(Array.isArray(storedSessions)?storedSessions:[]).filter(x=>x&&typeof x.id==='string'&&typeof x.title==='string').slice(0,35);
+  currentId=readLocal(LS_CURRENT,'');
+  if(!sessions.some(x=>x.id===currentId))currentId='';
+  function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function markdown(raw){
+    const lines=escapeHtml(raw).replace(/\r\n?/g,'\n').split('\n');
+    const inline = s=>s.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`([^`]+)`/g,'<code>$1</code>');
+    let html='', list=null;
+    const close=()=>{if(list){html+=`</${list}>`;list=null}};
+    for(const l of lines){const t=l.trim();const m=t.match(/^([-*]|\d+\.)\s+(.+)$/);
+      if(m){const kind=/\d/.test(m[1][0])?'ol':'ul';if(kind!==list){close();list=kind;html+=`<${list}>`}html+=`<li>${inline(m[2])}</li>`;continue}
+      close();if(!t){html+='<div style="height:7px"></div>';continue}
+      if(/^#{1,3}\s/.test(t)){html+=`<h3>${inline(t.replace(/^#{1,3}\s+/,''))}</h3>`}else{html+=`<p>${inline(t)}</p>`}
+    }close();return html;
+  }
+  async function request(url,options={}){
+    let response;try{response=await fetch(url,{credentials:'same-origin',...options})}catch{throw new Error('Không kết nối được máy chủ. Kiểm tra mạng hoặc thử lại.')}
+    let body=null;const raw=await response.text();try{body=raw?JSON.parse(raw):null}catch{body=raw}
+    if(!response.ok){const msg=body?.error?.message||body?.detail||`Máy chủ báo lỗi HTTP ${response.status}`;throw new Error(`${msg} (HTTP ${response.status})`)}
+    return body;
+  }
+  function setBusy(v){busy=v;$('sendBtn').disabled=v;$('question').disabled=v;$('newBtn').disabled=v}
+  function scrollEnd(){const el=$('timeline');requestAnimationFrame(()=>{el.scrollTop=el.scrollHeight})}
+  function hideMobile(){$('sidebar').classList.remove('open');$('sidebarShade').classList.remove('show')}
+  function updateList(){
+    const host=$('sessionList');host.replaceChildren();
+    if(!sessions.length){const d=document.createElement('div');d.className='emptyState';d.style.cssText='padding:12px;color:#a7bad3';d.textContent='Chưa có cuộc trò chuyện.';host.append(d);return}
+    sessions.forEach(s=>{const b=document.createElement('button');b.className='sessionItem'+(s.id===currentId?' active':'');b.title=s.title;b.innerHTML='<span aria-hidden="true">▤</span><span></span>';b.lastElementChild.textContent=s.title;b.onclick=()=>switchSession(s.id);host.append(b)})
+  }
+  function bindSuggestions(){document.querySelectorAll('[data-prompt]').forEach(b=>{b.onclick=()=>{const value=b.getAttribute('data-prompt');$('question').value=value;resizeTextarea();$('question').focus()}})}
+  function addMessage(role,content,citations=[],temp=false){
+    if($('welcome'))$('welcome').remove();
+    const wrapper=document.createElement('article');wrapper.className='message '+(role==='user'?'user':'assistant');
+    if(role!=='user'){const avatar=document.createElement('div');avatar.className='avatar';avatar.textContent='✦';wrapper.append(avatar)}
+    const body=document.createElement('div');body.className='messageBody';const bubble=document.createElement('div');bubble.className='bubble';
+    if(temp){bubble.innerHTML='<div class="loading" aria-label="Đang trả lời"><span></span><span></span><span></span></div>'}
+    else if(role==='user'){bubble.textContent=content}else{bubble.innerHTML=markdown(content)}
+    body.append(bubble);
+    if(role!=='user'&&Array.isArray(citations)&&citations.length){const label=document.createElement('div');label.className='sourceLabel';label.textContent='Nguồn tham khảo';body.append(label);const list=document.createElement('div');list.className='citationList';const seen=new Set();citations.forEach(c=>{const k=`${c.source_id||''}/${c.section||''}`;if(seen.has(k))return;seen.add(k);const chip=document.createElement('span');chip.className='sourceChip';chip.title=`${c.source_id||'Tài liệu'} · ${c.document_version_id||''}`;chip.textContent=`▤ ${c.section||'Tài liệu'} · ${c.source_id||''}`;list.append(chip)});body.append(list)}
+    if(!temp){const meta=document.createElement('div');meta.className='meta';meta.textContent=prettyDate();body.append(meta)}
+    wrapper.append(body);$('messages').append(wrapper);scrollEnd();return wrapper;
+  }
+  // Save landing markup as a template so returning to an empty session restores the suggestions.
+  const welcomeTemplate=document.createElement('template');welcomeTemplate.id='welcomeTemplate';welcomeTemplate.innerHTML=$('messages').innerHTML;document.body.append(welcomeTemplate);
+  function showEmpty(){ $('messages').replaceChildren(welcomeTemplate.content.cloneNode(true));bindSuggestions();scrollEnd() }
+  async function createSession(){const r=await request('/api/sessions',{method:'POST'});if(!r?.session_id)throw new Error('Không nhận được mã phiên từ máy chủ.');const session={id:r.session_id,title:'Cuộc trò chuyện mới',when:Date.now()};sessions.unshift(session);currentId=session.id;save();updateList();showEmpty();hideMobile();return r.session_id}
+  async function switchSession(id){if(busy||!sessions.some(s=>s.id===id))return;currentId=id;save();updateList();showEmpty();hideMobile();try{const r=await request(`/api/sessions/${encodeURIComponent(id)}/messages`);if(currentId!==id)return;if(!r.messages?.length){showEmpty();return} $('messages').replaceChildren();r.messages.forEach(m=>addMessage(m.role,m.content,m.citations||[]))}catch(e){if(e.message.includes('404')){sessions=sessions.filter(s=>s.id!==id);currentId='';save();updateList();showEmpty()}else{addMessage('assistant','Không thể tải lịch sử: '+e.message)}}}
+  function updateTitle(question){const s=sessions.find(x=>x.id===currentId);if(s&&s.title==='Cuộc trò chuyện mới'){s.title=question.length>34?question.slice(0,34)+'…':question;save();updateList()}}
+  async function submit(){const q=$('question').value.trim();if(busy)return;if(!q){$('question').focus();return}if(q.length>500){alert('Câu hỏi chỉ được tối đa 500 ký tự sau khi bỏ khoảng trắng.');return}
+    setBusy(true);let targetId=currentId;
+    try{if(!targetId)targetId=await createSession();$('question').value='';resizeTextarea();updateTitle(q);addMessage('user',q);const loading=addMessage('assistant','',[],true);
+      try{const r=await request('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({session_id:targetId,question:q,history_limit:5})});loading.remove();addMessage('assistant',r.answer||'(Không có nội dung trả lời)',r.citations||[])}
+      catch(e){loading.remove();addMessage('assistant','Không gửi được câu hỏi: '+e.message+'\n\nVui lòng kiểm tra cấu hình tài liệu, Gemini API hoặc thử lại.');$('question').value=q;resizeTextarea()}
+    }catch(e){addMessage('assistant','Không thể tạo phiên: '+e.message)}finally{setBusy(false);$('question').focus()}
+  }
+  function resizeTextarea(){const t=$('question');t.style.height='40px';t.style.height=Math.min(140,Math.max(40,t.scrollHeight))+'px';const n=t.value.trim().length;$('counter').textContent=`${n}/500`;$('counter').classList.toggle('warn',n>490)}
+  function showDrawer(tab){drawerTab=tab;$('drawer').classList.add('show');$('overlay').classList.add('show');$('drawer').setAttribute('aria-hidden','false');renderTabs();if(tab==='saved')loadFavorites()}
+  function closeDrawer(){$('drawer').classList.remove('show');$('overlay').classList.remove('show');$('drawer').setAttribute('aria-hidden','true')}
+  function renderTabs(){$('tabLookup').classList.toggle('active',drawerTab==='lookup');$('tabSaved').classList.toggle('active',drawerTab==='saved');$('lookupPanel').hidden=drawerTab!=='lookup';$('savedPanel').hidden=drawerTab!=='saved'}
+  function showError(el,msg){el.replaceChildren();const d=document.createElement('div');d.className='errorNotice';d.textContent=msg;el.append(d)}
+  async function lookupMajor(){const code=$('majorCode').value.trim();const el=$('lookupResult');el.replaceChildren();viewedMajor=null;if(!/^\d{7}$/.test(code)){showError(el,'Mã ngành phải gồm đúng 7 chữ số.');return}
+    try{const d=await request(`/api/majors/${code}?year=2026`);viewedMajor=d;const card=document.createElement('div');card.className='resultCard';const title=document.createElement('h3');title.textContent=d.major_name||'Ngành tuyển sinh';card.append(title);const info=document.createElement('div');info.className='sub';info.textContent=`Mã ngành: ${d.official_program_code||code} · SPS · 2026`;card.append(info);const status=document.createElement('p');status.className='hint';status.textContent='Dữ liệu ngành là bản dự thảo; kiểm tra thông báo chính thức khi sử dụng.';card.append(status);const foot=document.createElement('div');foot.className='foot';const b=document.createElement('button');b.className='primary';b.textContent='☆ Lưu vào danh sách quan tâm';b.onclick=saveFavorite;foot.append(b);card.append(foot);el.append(card)}catch(e){showError(el,e.message)}
+  }
+  async function showCatalog(){
+    const el=$('lookupResult');el.replaceChildren();viewedMajor=null;
+    try{const r=await request('/api/majors?year=2026');const panel=document.createElement('div');panel.className='resultCard';const title=document.createElement('h3');title.textContent=`Danh mục SPS 2026 · ${r.count??r.items?.length??0} ngành/chương trình`;panel.append(title);const hint=document.createElement('p');hint.className='hint';hint.textContent='Danh mục đang đối chiếu. Các mã có chữ chỉ hiển thị để tham khảo, không tra cứu bằng trường mã 7 chữ số.';panel.append(hint);
+      (r.items||[]).forEach(row=>{const item=document.createElement('div');item.className='favoriteCard';const info=document.createElement('div');const name=document.createElement('strong');name.textContent=row.major_name||'(Không có tên)';const code=document.createElement('small');code.textContent='Mã: '+row.official_program_code;info.append(name,code);item.append(info);panel.append(item)});el.append(panel)}catch(e){showError(el,e.message)}
+  }
+  async function clearHistory(){
+    if(busy)return;if(!currentId){alert('Bạn chưa có phiên hội thoại để xóa.');return}
+    if(!confirm('Xóa tất cả tin nhắn của cuộc trò chuyện hiện tại? Phiên sẽ được giữ lại.'))return;
+    try{await request(`/api/sessions/${encodeURIComponent(currentId)}/messages`,{method:'DELETE'});showEmpty()}catch(e){alert('Không xóa được lịch sử: '+e.message)}
+  }
+  async function saveFavorite(){if(!viewedMajor)return;try{const id=await ensureSession();await request(`/api/sessions/${id}/favorites`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({major_code:viewedMajor.official_program_code})});showDrawer('saved')}catch(e){showError($('lookupResult'),e.message)}}
+  async function ensureSession(){return currentId||await createSession()}
+  async function loadFavorites(){const el=$('savedPanel');el.replaceChildren();if(!currentId){el.innerHTML='<div class="emptyState">Chưa có cuộc trò chuyện. Hãy tạo phiên mới để lưu ngành quan tâm.</div>';$('tabSaved').textContent='Đã lưu (0/5)';return}
+    try{const r=await request(`/api/sessions/${encodeURIComponent(currentId)}/favorites`);$('tabSaved').textContent=`Đã lưu (${r.items?.length||0}/5)`;
+      if(!r.items?.length){el.innerHTML='<div class="emptyState">Bạn chưa lưu ngành nào trong phiên này. Hãy tra cứu mã ngành rồi chọn Lưu.</div>';return}
+      r.items.forEach(x=>{const d=document.createElement('div');d.className='favoriteCard';const info=document.createElement('div');const t=document.createElement('strong');t.textContent=x.major_name||'Ngành';const sub=document.createElement('small');sub.textContent='Mã ngành '+x.major_code;info.append(t,sub);const b=document.createElement('button');b.className='smallGhost';b.textContent='Xóa';b.setAttribute('aria-label','Xóa '+(x.major_name||x.major_code));b.onclick=async()=>{try{await request(`/api/sessions/${encodeURIComponent(currentId)}/favorites/${encodeURIComponent(x.major_code)}`,{method:'DELETE'});loadFavorites()}catch(e){showError(el,e.message)}};d.append(info,b);el.append(d)})}
+    catch(e){showError(el,e.message)}
+  }
+  async function boot(){try{const h=await request('/health');$('statusText').textContent=h.llm_mode==='gemini'?(h.llm_configured?'Đã cấu hình Gemini':'Thiếu Gemini API key'):`Chế độ ${h.llm_mode||'không xác định'}`;$('statusDot').classList.toggle('on',!!h.llm_configured)}catch(e){$('statusText').textContent='Không kết nối được';$('statusDot').classList.remove('on')}
+    updateList();bindSuggestions();if(currentId)await switchSession(currentId);
+  }
+  $('newBtn').onclick=async()=>{if(busy)return;try{await createSession()}catch(e){alert('Không tạo được phiên: '+e.message)}};
+  $('chatForm').addEventListener('submit',e=>{e.preventDefault();submit()});$('question').addEventListener('input',resizeTextarea);$('question').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();submit()}});
+  $('menuBtn').onclick=()=>{$('sidebar').classList.add('open');$('sidebarShade').classList.add('show')};$('sidebarShade').onclick=hideMobile;
+  $('majorBtn').onclick=()=>showDrawer('lookup');$('clearBtn').onclick=clearHistory;$('favoritesBtn').onclick=()=>showDrawer('saved');$('closeDrawer').onclick=closeDrawer;$('overlay').onclick=closeDrawer;
+  $('tabLookup').onclick=()=>showDrawer('lookup');$('tabSaved').onclick=()=>showDrawer('saved');$('lookupBtn').onclick=lookupMajor;$('catalogBtn').onclick=showCatalog;$('majorCode').onkeydown=e=>{if(e.key==='Enter')lookupMajor()};
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+  resizeTextarea();boot();
+})();
+</script>
+</body>
+</html>
