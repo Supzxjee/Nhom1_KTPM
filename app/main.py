@@ -70,7 +70,14 @@ def create_app():
         raise RuntimeError('TEAM_USERNAME và TEAM_PASSWORD phải được cấu hình cùng nhau.')
 
     def auto_seed_document(db_path: Path, settings):
-        """On every startup: if no active document exists, load the bundled PDF."""
+        """On every startup: if no active document exists, load the bundled PDF.
+
+        Set env var AUTO_SEED=0 to disable (useful in tests that need a
+        fresh empty database).
+        """
+        if os.getenv('AUTO_SEED', '1').strip() == '0':
+            logger.debug('auto_seed: disabled via AUTO_SEED=0.')
+            return
         # Locate bundled PDF – checked in at repo root.
         pdf_candidates = [
             Path(__file__).resolve().parent.parent / 'HCMUE_SPS_2026.pdf',
