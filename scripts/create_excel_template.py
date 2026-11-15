@@ -15,9 +15,9 @@ font_regular = Font(name='Calibri', size=11)
 fill_primary = PatternFill(start_color='1F4E78', end_color='1F4E78', fill_type='solid')      # Dark Blue
 fill_secondary = PatternFill(start_color='2F5597', end_color='2F5597', fill_type='solid')    # Steel Blue
 fill_accent = PatternFill(start_color='D9E1F2', end_color='D9E1F2', fill_type='solid')       # Light Soft Blue
-fill_pass = PatternFill(start_color='C6EFCE', end_color='C6EFCE', fill_type='solid')         # Soft Green
-fill_fail = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')         # Soft Red
+fill_not_run = PatternFill(start_color='E7E6E6', end_color='E7E6E6', fill_type='solid')     # Light Gray
 fill_warn = PatternFill(start_color='FFEB9C', end_color='FFEB9C', fill_type='solid')         # Soft Yellow
+fill_fail = PatternFill(start_color='FFC7CE', end_color='FFC7CE', fill_type='solid')         # Soft Red
 
 border_thin = Side(border_style='thin', color='D9D9D9')
 box_border = Border(left=border_thin, right=border_thin, top=border_thin, bottom=border_thin)
@@ -47,7 +47,7 @@ def autofit(ws, max_len_cap=50):
         ws.column_dimensions[col_letter].width = min(max(max_len + 4, 12), max_len_cap)
 
 # ==========================================
-# 1. SHEET: TestCase
+# 1. SHEET: TestCase (SẠCH - CHƯA CHẠY)
 # ==========================================
 ws1 = wb.create_sheet(title='TestCase')
 ws1.views.sheetView[0].showGridLines = True
@@ -63,31 +63,32 @@ for col_idx, h in enumerate(headers1, 1):
     ws1.cell(row=3, column=col_idx, value=h)
 style_header_row(ws1, 3, len(headers1))
 
+# Cột Kết quả thực tế và Ngày chạy để TRỐNG; Trạng thái = 'Not Run'
 sample_tcs = [
     (1, 'TC-CHAT-EP-001', 'FR-01 / BR-01', 'Kiểm tra câu hỏi rỗng sau trim', 'EP (Không hợp lệ)',
      'Phiên hợp lệ, tài liệu active', 'question = ""', '1. Gửi POST /api/chat với question rỗng',
-     'HTTP 422, error.code = INVALID_QUESTION', 'HTTP 422, error.code = INVALID_QUESTION', 'Pass', 'Đức Anh', '15/11/2026', 'Biên dưới = 0'),
+     'HTTP 422, error.code = INVALID_QUESTION', '', 'Not Run', 'Đức Anh', '', 'Biên dưới = 0'),
     (2, 'TC-CHAT-BVA-001', 'FR-01 / BR-01', 'Kiểm tra câu hỏi đạt biên dưới 1 ký tự', 'BVA (Biên hợp lệ)',
      'Phiên hợp lệ, tài liệu active', 'question = "A"', '1. Gửi POST /api/chat với question 1 ký tự',
-     'HTTP 200, phản hồi hợp lệ', 'HTTP 200, trả lời hoặc báo thiếu dữ liệu', 'Pass', 'Đức Anh', '15/11/2026', 'Biên n = 1'),
+     'HTTP 200, phản hồi hợp lệ', '', 'Not Run', 'Đức Anh', '', 'Biên n = 1'),
     (3, 'TC-CHAT-BVA-002', 'FR-01 / BR-01', 'Kiểm tra câu hỏi đạt biên trên 500 ký tự', 'BVA (Biên hợp lệ)',
      'Phiên hợp lệ, tài liệu active', 'question = chuỗi 500 ký tự', '1. Gửi POST /api/chat với 500 ký tự',
-     'HTTP 200, xử lý bình thường', 'HTTP 200, hệ thống tiếp nhận', 'Pass', 'Đức Anh', '15/11/2026', 'Biên n = 500'),
+     'HTTP 200, xử lý bình thường', '', 'Not Run', 'Đức Anh', '', 'Biên n = 500'),
     (4, 'TC-CHAT-BVA-003', 'FR-01 / BR-01', 'Kiểm tra câu hỏi vượt biên 501 ký tự', 'BVA (Biên không hợp lệ)',
      'Phiên hợp lệ, tài liệu active', 'question = chuỗi 501 ký tự', '1. Gửi POST /api/chat với 501 ký tự',
-     'HTTP 422, từ chối trước khi gọi AI', 'HTTP 422, error.code = INVALID_QUESTION', 'Pass', 'Đức Anh', '15/11/2026', 'Biên n = 501'),
+     'HTTP 422, từ chối trước khi gọi AI', '', 'Not Run', 'Đức Anh', '', 'Biên n = 501'),
     (5, 'TC-MAJOR-BVA-001', 'FR-02 / BR-02', 'Tra cứu mã ngành đúng 7 chữ số tồn tại', 'BVA / Phân vùng',
      'Dataset SPS 2026 đã nạp', 'code = "7140209", year = 2026', '1. Gửi GET /api/majors/7140209?year=2026',
-     'HTTP 200, tên ngành Sư phạm Toán học', 'HTTP 200, đúng dữ liệu ngành', 'Pass', 'Đức Anh', '15/11/2026', 'Mã hợp lệ'),
+     'HTTP 200, tên ngành Sư phạm Toán học', '', 'Not Run', 'Đức Anh', '', 'Mã hợp lệ'),
     (6, 'TC-FAV-DEC-001', 'FR-03 / BR-05', 'Thêm ngành quan tâm khi danh sách < 5 và chưa lưu', 'Decision Table (R1)',
      'Phiên hợp lệ, danh sách có 2 ngành', 'major_code = "7140209"', '1. Gửi POST /api/sessions/{id}/favorites',
-     'HTTP 200, thêm thành công, count = 3', 'HTTP 200, added = 7140209', 'Pass', 'Bảo Châu', '15/11/2026', 'Quy tắc R1'),
+     'HTTP 200, thêm thành công, count = 3', '', 'Not Run', 'Bảo Châu', '', 'Quy tắc R1'),
     (7, 'TC-DOC-STA-001', 'FR-05 / BR-06', 'Kích hoạt tài liệu từ trạng thái Nháp (Chuyển bị cấm)', 'State Transition',
      'Có document version ở trạng thái draft', 'POST /api/admin/documents/{id}/activate', '1. Gửi yêu cầu kích hoạt bản nháp',
-     'HTTP 409, INVALID_STATE, không cho kích hoạt', 'HTTP 409, INVALID_STATE', 'Pass', 'Bảo Châu', '15/11/2026', 'Chuyển trạng thái cấm'),
+     'HTTP 409, INVALID_STATE, không cho kích hoạt', '', 'Not Run', 'Bảo Châu', '', 'Chuyển trạng thái cấm'),
     (8, 'TC-WB-CFG-001', 'validate_query', 'Đầu vào question None và major_code None', 'White-box (Branch 1)',
      'Hàm kiểm tra đầu vào', 'question=None, major_code=None', '1. Gọi validate_query()',
-     'Lỗi MISSING_INPUT', 'Lỗi MISSING_INPUT', 'Pass', 'Hoàng Thảo', '15/11/2026', 'Đường cơ sở 1'),
+     'Lỗi MISSING_INPUT', '', 'Not Run', 'Hoàng Thảo', '', 'Đường cơ sở 1'),
 ]
 
 for row_idx, r in enumerate(sample_tcs, 4):
@@ -96,13 +97,13 @@ for row_idx, r in enumerate(sample_tcs, 4):
         c.font = font_regular
         c.border = box_border
         c.alignment = align_center if col_idx in [1, 2, 3, 5, 11, 13] else align_left
-        if col_idx == 11 and val == 'Pass':
-            c.fill = fill_pass
+        if col_idx == 11:
+            c.fill = fill_not_run
     ws1.row_dimensions[row_idx].height = 24
 autofit(ws1)
 
 # ==========================================
-# 2. SHEET: RTM (Requirements Traceability Matrix)
+# 2. SHEET: RTM
 # ==========================================
 ws2 = wb.create_sheet(title='RTM')
 ws2.views.sheetView[0].showGridLines = True
@@ -115,16 +116,16 @@ for col_idx, h in enumerate(headers2, 1):
 style_header_row(ws2, 3, len(headers2))
 
 sample_rtm = [
-    (1, 'FR-01', 'Hỏi đáp tuyển sinh dựa trên tài liệu có dẫn nguồn', 'Chức năng', 'Bắt buộc', 'TC-CHAT-EP-001, TC-CHAT-BVA-001, TC-AI-001..040', 44, 'Đã bao phủ'),
-    (2, 'FR-02', 'Tra cứu ngành theo mã 7 chữ số và năm tuyển sinh 2026', 'Chức năng', 'Bắt buộc', 'TC-MAJOR-BVA-001, TC-MAJOR-002..010', 10, 'Đã bao phủ'),
-    (3, 'FR-03', 'Thêm/xóa danh sách ngành quan tâm (tối đa 5, không trùng)', 'Chức năng', 'Bắt buộc', 'TC-FAV-DEC-001..008, TC-FAV-BVA-001..004', 12, 'Đã bao phủ'),
-    (4, 'FR-04', 'Tạo phiên, xem và xóa lịch sử (giữ nguyên session_id)', 'Chức năng', 'Bắt buộc', 'TC-SESSION-001..008', 8, 'Đã bao phủ'),
-    (5, 'FR-05', 'Quản lý phiên bản tài liệu (Nháp -> Kiểm tra -> Đang dùng)', 'Chức năng', 'Bắt buộc', 'TC-DOC-STA-001..010', 10, 'Đã bao phủ'),
-    (6, 'BR-01', 'Câu hỏi từ 1 đến 500 ký tự sau khi trim', 'Nghiệp vụ', 'Bắt buộc', 'TC-CHAT-EP-001, TC-CHAT-BVA-001..003', 4, 'Đã bao phủ'),
-    (7, 'BR-02', 'Mã ngành tra cứu/lưu bắt buộc là 7 chữ số ASCII', 'Nghiệp vụ', 'Bắt buộc', 'TC-MAJOR-BVA-001, TC-MAJOR-EP-001', 5, 'Đã bao phủ'),
-    (8, 'BR-04', 'history_limit từ 0 đến 10, không nhận boolean', 'Nghiệp vụ', 'Bắt buộc', 'TC-HIST-BVA-001..006', 6, 'Đã bao phủ'),
-    (9, 'BR-05', 'Danh sách quan tâm tối đa 5 ngành, không trùng', 'Nghiệp vụ', 'Bắt buộc', 'TC-FAV-DEC-001..008', 8, 'Đã bao phủ'),
-    (10, 'NFR-08', 'Hàm validate_query() đạt độ bao phủ nhánh >= 80%', 'Phi chức năng', 'Bắt buộc', 'TC-WB-CFG-001..040 (pytest 100% branch)', 40, 'Đã bao phủ'),
+    (1, 'FR-01', 'Hỏi đáp tuyển sinh dựa trên tài liệu có dẫn nguồn', 'Chức năng', 'Bắt buộc', 'TC-CHAT-EP-001, TC-CHAT-BVA-001, TC-AI-001..040', 44, 'Chưa kiểm thử'),
+    (2, 'FR-02', 'Tra cứu ngành theo mã 7 chữ số và năm tuyển sinh 2026', 'Chức năng', 'Bắt buộc', 'TC-MAJOR-BVA-001, TC-MAJOR-002..010', 10, 'Chưa kiểm thử'),
+    (3, 'FR-03', 'Thêm/xóa danh sách ngành quan tâm (tối đa 5, không trùng)', 'Chức năng', 'Bắt buộc', 'TC-FAV-DEC-001..008, TC-FAV-BVA-001..004', 12, 'Chưa kiểm thử'),
+    (4, 'FR-04', 'Tạo phiên, xem và xóa lịch sử (giữ nguyên session_id)', 'Chức năng', 'Bắt buộc', 'TC-SESSION-001..008', 8, 'Chưa kiểm thử'),
+    (5, 'FR-05', 'Quản lý phiên bản tài liệu (Nháp -> Kiểm tra -> Đang dùng)', 'Chức năng', 'Bắt buộc', 'TC-DOC-STA-001..010', 10, 'Chưa kiểm thử'),
+    (6, 'BR-01', 'Câu hỏi từ 1 đến 500 ký tự sau khi trim', 'Nghiệp vụ', 'Bắt buộc', 'TC-CHAT-EP-001, TC-CHAT-BVA-001..003', 4, 'Chưa kiểm thử'),
+    (7, 'BR-02', 'Mã ngành tra cứu/lưu bắt buộc là 7 chữ số ASCII', 'Nghiệp vụ', 'Bắt buộc', 'TC-MAJOR-BVA-001, TC-MAJOR-EP-001', 5, 'Chưa kiểm thử'),
+    (8, 'BR-04', 'history_limit từ 0 đến 10, không nhận boolean', 'Nghiệp vụ', 'Bắt buộc', 'TC-HIST-BVA-001..006', 6, 'Chưa kiểm thử'),
+    (9, 'BR-05', 'Danh sách quan tâm tối đa 5 ngành, không trùng', 'Nghiệp vụ', 'Bắt buộc', 'TC-FAV-DEC-001..008', 8, 'Chưa kiểm thử'),
+    (10, 'NFR-08', 'Hàm validate_query() đạt độ bao phủ nhánh >= 80%', 'Phi chức năng', 'Bắt buộc', 'TC-WB-CFG-001..040', 40, 'Chưa kiểm thử'),
 ]
 for row_idx, r in enumerate(sample_rtm, 4):
     for col_idx, val in enumerate(r, 1):
@@ -133,7 +134,7 @@ for row_idx, r in enumerate(sample_rtm, 4):
         c.border = box_border
         c.alignment = align_center if col_idx in [1, 2, 4, 5, 7, 8] else align_left
         if col_idx == 8:
-            c.fill = fill_pass
+            c.fill = fill_not_run
     ws2.row_dimensions[row_idx].height = 24
 autofit(ws2)
 
@@ -150,14 +151,11 @@ for col_idx, h in enumerate(headers3, 1):
     ws3.cell(row=3, column=col_idx, value=h)
 style_header_row(ws3, 3, len(headers3))
 
+# Giữ lại các bug thực tế từ v0.5-v0.7 làm minh chứng lịch sử phát hiện lỗi
 sample_bugs = [
     ('BUG-001', 'Lỗi Retrieval v0.7: Không tìm được ngành khi hỏi câu tự nhiên dài có tên ngành', 'TC-AI-001', 'FR-01', 'Railway / Local', 'Critical', 'High', 'Closed', 'Châu', 'Đức Anh', 'fixes #1 (commit 6e4b861)', '14/11/2026', '15/11/2026'),
     ('BUG-002', 'Lỗi 503 NO_ACTIVE_DOCUMENT sau khi redeploy Railway do chưa seed tài liệu', 'TC-DOC-002', 'FR-05', 'Railway', 'Critical', 'High', 'Closed', 'Lâm', 'Đức Anh', 'fixes #2 (commit db20cb4)', '15/11/2026', '15/11/2026'),
     ('BUG-003', 'history_limit nhận giá trị True/False do Python boolean kế thừa int', 'TC-HIST-003', 'FR-04', 'Local/Unit', 'Major', 'Medium', 'Closed', 'Thảo', 'Thảo', 'commit ae3c10a', '14/11/2026', '14/11/2026'),
-    ('BUG-004', 'Tra cứu mã chương trình chữ-số (7140202SN) trả về lỗi 500 thay vì 422', 'TC-MAJOR-004', 'FR-02', 'Local/API', 'Major', 'Medium', 'Closed', 'Lâm', 'Đức Anh', 'commit 490109a', '14/11/2026', '14/11/2026'),
-    ('BUG-005', 'Xóa lịch sử tin nhắn vô tình xóa luôn phiên session_id', 'TC-SESS-005', 'FR-04', 'Local/API', 'Critical', 'High', 'Closed', 'Châu', 'Đức Anh', 'commit 490109a', '14/11/2026', '14/11/2026'),
-    ('BUG-006', 'Thêm ngành quan tâm trùng mã không trả lỗi 409 DUPLICATE_FAVORITE', 'TC-FAV-006', 'FR-03', 'Local/API', 'Medium', 'Medium', 'Closed', 'Lâm', 'Thảo', 'commit 490109a', '14/11/2026', '14/11/2026'),
-    ('BUG-007', 'Giao diện web v0.5 không hiển thị phần trích dẫn nguồn khi AI trả lời', 'TC-UI-007', 'UI/FR-01', 'Web Browser', 'Minor', 'Low', 'Closed', 'Đức Anh', 'Đức Anh', 'commit d283938', '14/11/2026', '14/11/2026'),
 ]
 for row_idx, r in enumerate(sample_bugs, 4):
     for col_idx, val in enumerate(r, 1):
@@ -166,9 +164,7 @@ for row_idx, r in enumerate(sample_bugs, 4):
         c.border = box_border
         c.alignment = align_center if col_idx in [1, 3, 4, 6, 7, 8, 9, 10, 12, 13] else align_left
         if col_idx == 8 and val == 'Closed':
-            c.fill = fill_pass
-        elif col_idx == 6 and val == 'Critical':
-            c.fill = fill_fail
+            c.fill = fill_not_run
     ws3.row_dimensions[row_idx].height = 24
 autofit(ws3)
 
@@ -245,35 +241,34 @@ for row_idx, r in enumerate(sample_estimates, 4):
 autofit(ws5)
 
 # ==========================================
-# 6. SHEET: TongKet
+# 6. SHEET: TongKet (RESET VỀ TRẠNG THÁI CHƯA CHẠY)
 # ==========================================
 ws6 = wb.create_sheet(title='TongKet')
 ws6.views.sheetView[0].showGridLines = True
 ws6.cell(row=1, column=1, value='BÁO CÁO TỔNG KẾT KẾT QUẢ KIỂM THỬ (TEST SUMMARY REPORT)').font = font_title
 ws6.row_dimensions[1].height = 25
 
-# Summary Table 1
-ws6.cell(row=3, column=1, value='1. Thống kê ca kiểm thử theo kỹ thuật').font = font_bold
-headers6_1 = ['Kỹ thuật kiểm thử', 'Số lượng ca', 'Pass', 'Fail', 'Blocked', 'Tỷ lệ đạt (%)']
+ws6.cell(row=3, column=1, value='1. Thống kê ca kiểm thử theo kỹ thuật (Trạng thái: Đang thiết kế)').font = font_bold
+headers6_1 = ['Kỹ thuật kiểm thử', 'Số lượng ca dự kiến', 'Pass', 'Fail', 'Blocked', 'Not Run (Chưa chạy)', 'Tỷ lệ đạt (%)']
 for col_idx, h in enumerate(headers6_1, 1):
     ws6.cell(row=4, column=col_idx, value=h)
 style_header_row(ws6, 4, len(headers6_1), fill=fill_secondary)
 
 t1_data = [
-    ('Phân vùng tương đương (EP) & Giá trị biên (BVA)', 36, 36, 0, 0, '100%'),
-    ('Bảng quyết định (Decision Table - FR-03)', 8, 8, 0, 0, '100%'),
-    ('Kiểm thử chuyển trạng thái (State Transition - FR-05)', 10, 10, 0, 0, '100%'),
-    ('Kiểm thử hộp trắng (validate_query - Branch coverage)', 40, 40, 0, 0, '100%'),
-    ('Kiểm thử tự động API & Tích hợp (pytest/HTTPX)', 33, 33, 0, 0, '100%'),
-    ('Đánh giá mô hình AI (Golden Set 40 câu x 3 lượt = 120 lần)', 120, 108, 12, 0, '90.0% (Mục tiêu >= 85%)'),
-    ('TỔNG CỘNG', 247, 235, 12, 0, '95.1%')
+    ('Phân vùng tương đương (EP) & Giá trị biên (BVA)', 36, 0, 0, 0, 36, '0.0%'),
+    ('Bảng quyết định (Decision Table - FR-03)', 8, 0, 0, 0, 8, '0.0%'),
+    ('Kiểm thử chuyển trạng thái (State Transition - FR-05)', 10, 0, 0, 0, 10, '0.0%'),
+    ('Kiểm thử hộp trắng (validate_query - Branch coverage)', 40, 0, 0, 0, 40, '0.0%'),
+    ('Kiểm thử tự động API & Tích hợp (pytest/HTTPX)', 33, 0, 0, 0, 33, '0.0%'),
+    ('Đánh giá mô hình AI (Golden Set 40 câu x 3 lượt = 120 lần)', 120, 0, 0, 0, 120, '0.0% (Mục tiêu >= 85%)'),
+    ('TỔNG CỘNG', 247, 0, 0, 0, 247, '0.0% (Chưa thực thi)')
 ]
 for row_idx, r in enumerate(t1_data, 5):
     for col_idx, val in enumerate(r, 1):
         c = ws6.cell(row=row_idx, column=col_idx, value=val)
         c.font = font_bold if row_idx == 11 else font_regular
         c.border = box_border
-        c.alignment = align_center if col_idx in [2, 3, 4, 5, 6] else align_left
+        c.alignment = align_center if col_idx in [2, 3, 4, 5, 6, 7] else align_left
         if row_idx == 11:
             c.fill = fill_accent
     ws6.row_dimensions[row_idx].height = 24
@@ -286,11 +281,11 @@ for col_idx, h in enumerate(headers6_2, 1):
 style_header_row(ws6, 14, len(headers6_2), fill=fill_secondary)
 
 t2_data = [
-    ('Critical (Nghiêm trọng - chặn luồng)', 3, 3, 3, '100%'),
-    ('Major (Lỗi logic lớn)', 2, 2, 2, '100%'),
-    ('Medium (Lỗi trung bình)', 1, 1, 1, '100%'),
-    ('Minor (Lỗi nhỏ giao diện/hiển thị)', 1, 1, 1, '100%'),
-    ('TỔNG CỘNG LỖI', 7, 7, 7, '100%')
+    ('Critical (Nghiêm trọng - chặn luồng)', 2, 2, 2, '100%'),
+    ('Major (Lỗi logic lớn)', 1, 1, 1, '100%'),
+    ('Medium (Lỗi trung bình)', 0, 0, 0, '-'),
+    ('Minor (Lỗi nhỏ giao diện/hiển thị)', 0, 0, 0, '-'),
+    ('TỔNG CỘNG LỖI', 3, 3, 3, '100%')
 ]
 for row_idx, r in enumerate(t2_data, 15):
     for col_idx, val in enumerate(r, 1):
@@ -302,18 +297,13 @@ for row_idx, r in enumerate(t2_data, 15):
             c.fill = fill_accent
     ws6.row_dimensions[row_idx].height = 24
 
-# Summary Table 3: Conclusion
-ws6.cell(row=21, column=1, value='3. Kết luận đánh giá').font = font_bold
-ws6.cell(row=22, column=1, value='- Hệ thống đạt 100% tiêu chí chức năng FR-01 đến FR-05, không còn lỗi mức Critical/Major tồn đọng.').font = font_regular
-ws6.cell(row=23, column=1, value='- Độ bao phủ nhánh hộp trắng hàm validate_query() đạt 100% (vượt mục tiêu >= 80% của SRS).').font = font_regular
-ws6.cell(row=24, column=1, value='- Tỷ lệ đạt của bộ câu hỏi AI đạt 90.0% (108/120 lượt đạt theo rubric 4 tiêu chí, vượt ngưỡng nghiệm thu >= 85%).').font = font_regular
-ws6.cell(row=25, column=1, value='- Khuyến nghị: Đủ điều kiện nghiệm thu và phát hành phiên bản thử nghiệm cho sinh viên môn COMP1307.').font = font_bold
+ws6.cell(row=21, column=1, value='3. Trạng thái hiện tại').font = font_bold
+ws6.cell(row=22, column=1, value='- Giai đoạn: Tuần 1 - Đang hoàn thiện thiết kế ca kiểm thử hộp đen, hộp trắng và bộ câu hỏi AI.').font = font_regular
+ws6.cell(row=23, column=1, value='- Toàn bộ ca kiểm thử đang ở trạng thái Not Run, sẵn sàng thực thi trên môi trường test.').font = font_regular
 
 autofit(ws6)
 
 # Save
-out_dir = Path('docs')
-out_dir.mkdir(parents=True, exist_ok=True)
-out_file = out_dir / 'HoSoKiemThu_Nhom01.xlsx'
+out_file = Path('docs') / 'HoSoKiemThu_Nhom01.xlsx'
 wb.save(out_file)
-print('Successfully generated:', out_file)
+print('Cleaned Excel generated:', out_file)
